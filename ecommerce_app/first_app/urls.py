@@ -23,7 +23,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+
 urlpatterns = [
-    path("ecommerce_app/", include("ecommerce_app.urls")),
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
+        # connet path to ecommerce_app urls
+    path('', include('ecommerce_app.urls')),
 ]
+
+
