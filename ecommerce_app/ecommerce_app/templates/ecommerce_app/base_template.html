@@ -11,10 +11,11 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light lead">
-<img src="{% static 'images/TurtleByrd.gif' %}" />
-<div class="container-fluid">
 
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light lead">
+{% load static %}
+<img style="height: 7em; width:auto;" src="{% static '/images/TurtleByrd.gif' %}" />
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
 aria-expanded="false" aria-label="Toggle navigation">
@@ -33,3 +34,9 @@ aria-expanded="false" aria-label="Toggle navigation">
 {% endblock %}
 </body>
 </html>
+
+
+
+
+
+

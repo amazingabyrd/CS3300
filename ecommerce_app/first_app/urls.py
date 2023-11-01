@@ -28,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
         # connet path to ecommerce_app urls
     path('', include('ecommerce_app.urls')),
+
 ]
 
 
