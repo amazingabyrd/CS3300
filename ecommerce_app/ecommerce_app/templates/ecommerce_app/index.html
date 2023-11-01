@@ -5,7 +5,7 @@
 {% block content %}
 
 <h1>TurtleByrd Products</h1>
-
+<a class="btn btn-primary" href="{% url 'create_product' %}" role="button">New</a>
 <h2>List of Products</h2>
 <ul class="list-group">
 
@@ -13,11 +13,14 @@
     <li class="list-group-item">Name: {{i.name}}
 
         <p><strong>Price: ${{ i.price }}
-        <a class="btn btn-primary" href="{{ i.get_absolute_url }}" role="button">View</a>
+        <a class="btn btn-success" href="{{ i.get_absolute_url }}" role="button">View</a>
+        <a class="btn btn-primary" href="{% url 'update_product' i.id %}" role="button">Update</a>
+        <a class="btn btn-danger" href="{% url 'delete_product' i.id %}" role="button">Delete</a>
 
     </li>
     {% endfor %}
 </ul>
+
 
 {% endblock %}
 
