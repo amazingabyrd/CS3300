@@ -19,21 +19,7 @@ def index(request):
     # Default from template
     # return HttpResponse("Hello, world. You're at the polls index.")
 
-#
-# def createProduct(request):
-#     form = ProductForm()
-#
-#     if request.method == 'POST':
-#         form = ProductForm()
-#             # Save the form without committing to the database
-#         product = form.save(commit=False)
-#         product.save()
-#         # Redirect back to the portfolio detail page
-#         return redirect('products')
-#
-#     context = {'form': form}
-#     return render(request, 'ecommerce_app/product_form.html', context)
-#
+
 def createProduct(request):
     if request.method == 'POST':
         form = ProductForm(request.POST)
@@ -48,15 +34,6 @@ def createProduct(request):
     context = {'form': form}
     return render(request, 'ecommerce_app/product_form.html', context)
 
-def deleteProduct(request, product_id):
-    product = Product.objects.get(pk=product_id)
-    if request.method == 'POST':
-        product.delete()
-        return redirect('/')
-    context = {'product': product}
-    return render(request, 'ecommerce_app/product_delete.html', context)
-
-
 
 def updateProduct(request, product_id ):
     product = Product.objects.get(pk=product_id)
@@ -69,3 +46,10 @@ def updateProduct(request, product_id ):
     context = {'form': form}
     return render(request, 'ecommerce_app/product_form.html', context)
 
+def deleteProduct(request, product_id):
+    product = Product.objects.get(pk=product_id)
+    if request.method == 'POST':
+        product.delete()
+        return redirect('/')
+    context = {'product': product}
+    return render(request, 'ecommerce_app/product_delete.html', context)

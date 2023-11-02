@@ -20,3 +20,4 @@ class Product(models.Model):
     # # Allows seeing the instance of Seller
     # def get_absolute_url(self):
     #     return reverse('seller-detail', args=[str(self.id)])
+
