@@ -34,7 +34,6 @@ def createProduct(request):
     context = {'form': form}
     return render(request, 'ecommerce_app/product_form.html', context)
 
-
 def updateProduct(request, product_id ):
     product = Product.objects.get(pk=product_id)
     form = ProductForm(instance=product)
