@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
+from django.views.generic.base import View
 from django.contrib import messages
 from .models import *
 from .forms import ProductForm
+
 
 
 class ProductListView(generic.ListView):

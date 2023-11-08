@@ -23,6 +23,7 @@ urlpatterns = [
 # #Update Product
     path('product/<int:product_id>/update_product', views.updateProduct, name='update_product'),
 
+
 ]
 
 

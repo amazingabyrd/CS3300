@@ -22,6 +22,7 @@ Including another URLconf
 # ]
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic.base import TemplateView
 
 
 urlpatterns = [
@@ -29,6 +30,16 @@ urlpatterns = [
         # connet path to ecommerce_app urls
     path('', include('ecommerce_app.urls')),
 
+    # Authentication URLconf
+    path('accounts/', include('django.contrib.auth.urls')),
+
+    # # home page for login
+    path("", TemplateView.as_view(template_name="home.html"), name="home")
+
+
 ]
+
+
+
 
 
