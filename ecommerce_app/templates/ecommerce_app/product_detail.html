@@ -1,6 +1,13 @@
 {% extends 'ecommerce_app/base_template.html' %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
+{% else %}
+    <a class="btn btn-success" href="{% url 'payment' %}">Pay Now</a>
+{% endif %}
+
+
 <h1>Product: {{ product.name }}</h1>
 <p><strong>Price:</strong> {{ product.price }}</p>
 <p><strong>About:</strong> {{ product.description }}</p>

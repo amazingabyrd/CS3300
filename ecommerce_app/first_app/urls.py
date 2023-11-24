@@ -30,6 +30,8 @@ urlpatterns = [
         # connet path to ecommerce_app urls
     path('', include('ecommerce_app.urls')),
 
+    # path('payment/', include('payment_app.urls')),
+
     # Authentication URLconf
     path('accounts/', include('django.contrib.auth.urls')),
 

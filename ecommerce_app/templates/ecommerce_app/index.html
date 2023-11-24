@@ -5,7 +5,9 @@
 {% block content %}
 
 <h1>TurtleByrd Products</h1>
+{% if user.is_authenticated %}
 <a class="btn btn-primary" href="{% url 'create_product' %}" role="button">New</a>
+{% endif %}
 <h2>List of Products</h2>
 <ul class="list-group">
 
@@ -14,8 +16,10 @@
 
         <p><strong>Price: ${{ i.price }}
         <a class="btn btn-success" href="{{ i.get_absolute_url }}" role="button">View</a>
+        {% if user.is_authenticated %}
         <a class="btn btn-primary" href="{% url 'update_product' i.id %}" role="button">Update</a>
         <a class="btn btn-danger" href="{% url 'delete_product' i.id %}" role="button">Delete</a>
+        {% endif %}
 
     </li>
     {% endfor %}
