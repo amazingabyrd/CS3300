@@ -3,7 +3,36 @@ from django.urls import reverse
 from .models import *
 from .views import *
 from django.contrib.auth.models import User
-from django.test import Client
+from django.test import Client, LiveServerTestCase
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+
+# Create your tests here.
+
+# Selenium test
+class ProductFormTest(LiveServerTestCase):
+
+    def setUp(self):
+        self.selenium = webdriver.Firefox()
+
+    def tearDown(self):
+        self.selenium.quit()
+
+    def test_word_presence(self):
+        # Homepage
+        self.selenium.get(self.live_server_url)
+
+        # Check for title
+        assert 'TurtleByrd' in self.selenium.page_source
+
+    def test_home_button_presence(self):
+        self.selenium.get(self.live_server_url)
+
+        # Check for Home Button
+        assert 'Home' in self.selenium.page_source
+
 
 # Homepage tests
 class HomepageTests(TestCase):
