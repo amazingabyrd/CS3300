@@ -12,7 +12,7 @@ from selenium.webdriver.common.keys import Keys
 # Create your tests here.
 
 # Selenium test
-class ProductFormTest(LiveServerTestCase):
+class Selenium(LiveServerTestCase):
 
     def setUp(self):
         self.selenium = webdriver.Firefox()
